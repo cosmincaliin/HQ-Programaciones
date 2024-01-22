@@ -31,6 +31,7 @@ Route::resource('/criteris', CriteriController::class);
 Route::resource('/continguts', ContingutController::class);
 Route::resource('/programacions', ProgramacionController::class);
 Route::resource('/activitats', ActivitatController::class);
+Route::get('/ra/byUf/{ufId}', [RaController::class, 'getByUf']);
 
 Route::middleware([
     'auth:sanctum',

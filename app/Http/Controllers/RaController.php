@@ -106,4 +106,9 @@ class RaController extends Controller
         return redirect()->route('ras.index')
             ->with('success', 'Ra deleted successfully');
     }
+    public function getByUf($ufId)
+{
+    $ras = Ra::where('uf_id', $ufId)->pluck('name', 'id');
+    return json_encode($ras);
+}
 }
